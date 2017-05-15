@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9CDA0DB-8A88-4B79-AC6D-E417EC36C2E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_2013215462_ENT</RootNamespace>
+    <AssemblyName>2013215462-ENT</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\AdministradorEquipo.cs" />
+    <Compile Include="Entities\AdministradorLinea.cs" />
+    <Compile Include="Entities\CentroAtencion.cs" />
+    <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\Contrato.cs" />
+    <Compile Include="Entities\Departamento.cs" />
+    <Compile Include="Entities\Direccion.cs" />
+    <Compile Include="Entities\Distrito.cs" />
+    <Compile Include="Entities\EquipoCelular.cs" />
+    <Compile Include="Entities\EstadoEvaluacion.cs" />
+    <Compile Include="Entities\Evaluacion.cs" />
+    <Compile Include="Entities\LineaTelefonica.cs" />
+    <Compile Include="Entities\Plan.cs" />
+    <Compile Include="lRepositories\IAdministradorEquipoRepository.cs" />
+    <Compile Include="lRepositories\IAdministradorLineaRepository.cs" />
+    <Compile Include="lRepositories\ICentroAtencionRepository.cs" />
+    <Compile Include="lRepositories\IClienteRepository.cs" />
+    <Compile Include="lRepositories\IContratoRepository.cs" />
+    <Compile Include="lRepositories\IDepartamentoRepository.cs" />
+    <Compile Include="lRepositories\IDireccionRepository.cs" />
+    <Compile Include="lRepositories\IDistritoRepository.cs" />
+    <Compile Include="lRepositories\IEquipoCelularRepository.cs" />
+    <Compile Include="lRepositories\IEstadoEvaluacionRepository.cs" />
+    <Compile Include="lRepositories\IEvaluacionRepository.cs" />
+    <Compile Include="lRepositories\ILineaTelefonicaRepository.cs" />
+    <Compile Include="lRepositories\IPlanRepository.cs" />
+    <Compile Include="lRepositories\IProvinciaRepository.cs" />
+    <Compile Include="lRepositories\IRepository.cs" />
+    <Compile Include="lRepositories\ITipoEvaluacionRepository.cs" />
+    <Compile Include="lRepositories\ITipoLineaRepository.cs" />
+    <Compile Include="lRepositories\ITipoPagoRepository.cs" />
+    <Compile Include="lRepositories\ITipoPlanRepository.cs" />
+    <Compile Include="lRepositories\ITipoTrabajadorRepository.cs" />
+    <Compile Include="lRepositories\ITrabajadorRepository.cs" />
+    <Compile Include="lRepositories\IUnityOfWork.cs" />
+    <Compile Include="lRepositories\IVentaRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Provincia.cs" />
+    <Compile Include="Entities\TipoEvaluacion.cs" />
+    <Compile Include="Entities\TipoLinea.cs" />
+    <Compile Include="Entities\TipoPago.cs" />
+    <Compile Include="Entities\TipoPlan.cs" />
+    <Compile Include="Entities\TipoTrabajador.cs" />
+    <Compile Include="Entities\Trabajador.cs" />
+    <Compile Include="Entities\Venta.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

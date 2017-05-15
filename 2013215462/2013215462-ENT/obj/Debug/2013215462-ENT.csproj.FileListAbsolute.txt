@@ -1,0 +1,9 @@
+C:\Users\Brenda\Documents\Visual Studio 2013\Projects\2013215462-CON\2013215462-ENT\obj\Debug\2013215462-ENT.csprojResolveAssemblyReference.cache
+C:\Users\Brenda\Documents\Visual Studio 2013\Projects\2013215462-CON\2013215462-ENT\bin\Debug\2013215462-ENT.dll
+C:\Users\Brenda\Documents\Visual Studio 2013\Projects\2013215462-CON\2013215462-ENT\bin\Debug\2013215462-ENT.pdb
+C:\Users\Brenda\Documents\Visual Studio 2013\Projects\2013215462-CON\2013215462-ENT\obj\Debug\2013215462-ENT.dll
+C:\Users\Brenda\Documents\Visual Studio 2013\Projects\2013215462-CON\2013215462-ENT\obj\Debug\2013215462-ENT.pdb
+C:\Users\Brenda\Documents\Visual Studio 2013\Projects\2013215462\2013215462-ENT\bin\Debug\2013215462-ENT.dll
+C:\Users\Brenda\Documents\Visual Studio 2013\Projects\2013215462\2013215462-ENT\bin\Debug\2013215462-ENT.pdb
+C:\Users\Brenda\Documents\Visual Studio 2013\Projects\2013215462\2013215462-ENT\obj\Debug\2013215462-ENT.dll
+C:\Users\Brenda\Documents\Visual Studio 2013\Projects\2013215462\2013215462-ENT\obj\Debug\2013215462-ENT.pdb

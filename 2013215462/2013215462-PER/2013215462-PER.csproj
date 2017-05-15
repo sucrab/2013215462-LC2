@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E6B16DF-C89E-415B-9AF0-9F467F49287C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_2013215462_PER</RootNamespace>
+    <AssemblyName>2013215462-PER</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DiazDbContext.cs" />
+    <Compile Include="EntitiesConfigurations\AdministradorLineaConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\CentroAtencionConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\ClienteConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\ContratoConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\DepartamentoConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\DireccionConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\DistritoConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\EquipoCelularConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\EstadoEvaluacionConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\EvaluacionConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\LineaTelefonicaConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\PlanConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\ProvinciaConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\TipoEvaluacionConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\TipoLineaConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\TipoPagoConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\TipoPlanConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\TipoTrabajadorConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\TrabajadorConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\VentaConfiguration.cs" />
+    <Compile Include="Migrations\201705140609079_ADD.cs" />
+    <Compile Include="Migrations\201705140609079_ADD.Designer.cs">
+      <DependentUpon>201705140609079_ADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdministradorEquipoRepository.cs" />
+    <Compile Include="Repositories\AdministradorLineaRepository.cs" />
+    <Compile Include="Repositories\CentroAtencionRepository.cs" />
+    <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\ContratoRepository.cs" />
+    <Compile Include="Repositories\DepartamentoRepository.cs" />
+    <Compile Include="Repositories\DireccionRepository.cs" />
+    <Compile Include="Repositories\DistritoRepository.cs" />
+    <Compile Include="Repositories\EquipoCelularRepository.cs" />
+    <Compile Include="Repositories\EstadoEvaluacionRepository.cs" />
+    <Compile Include="Repositories\EvaluacionRepository.cs" />
+    <Compile Include="Repositories\LineaTelefonicaRepository.cs" />
+    <Compile Include="Repositories\PlanRepository.cs" />
+    <Compile Include="Repositories\ProvinciaRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\TipoEvaluacionRepository.cs" />
+    <Compile Include="Repositories\TipoLineaRepository.cs" />
+    <Compile Include="Repositories\TipoPagoRepository.cs" />
+    <Compile Include="Repositories\TipoPlanRepository.cs" />
+    <Compile Include="Repositories\TipoTrabajadorRepository.cs" />
+    <Compile Include="Repositories\TrabajadorRepository.cs" />
+    <Compile Include="Repositories\UnityOfWork.cs" />
+    <Compile Include="Repositories\VentaRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\2013215462-ENT\2013215462-ENT.csproj">
+      <Project>{e9cda0db-8a88-4b79-ac6d-e417ec36c2e4}</Project>
+      <Name>2013215462-ENT</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntitiesConfigurations\AdministradorEquipoConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705140609079_ADD.resx">
+      <DependentUpon>201705140609079_ADD.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
