@@ -11,6 +11,7 @@ namespace _2013215462_ENT
     {
         public int LineaTelefonicaID { get; set; }
 
+        //public string Descripcion { get; set; }
         public TipoLinea TipoLinea { get; set; }
 
         public AdministradorLinea AdministradorLinea { get; set; }

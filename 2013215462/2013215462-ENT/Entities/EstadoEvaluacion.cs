@@ -11,6 +11,8 @@ namespace _2013215462_ENT
     {
         public int EstadoEvaluacionID { get; set; }
 
+        //public string Estado { get; set; }
+
         public ICollection<Evaluacion> Evaluacion { get; set; }
         public int EvaluacionID { get; set; }
 

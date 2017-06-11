@@ -30,11 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -67,9 +69,9 @@
     <Compile Include="EntitiesConfigurations\TipoTrabajadorConfiguration.cs" />
     <Compile Include="EntitiesConfigurations\TrabajadorConfiguration.cs" />
     <Compile Include="EntitiesConfigurations\VentaConfiguration.cs" />
-    <Compile Include="Migrations\201705140609079_ADD.cs" />
-    <Compile Include="Migrations\201705140609079_ADD.Designer.cs">
-      <DependentUpon>201705140609079_ADD.cs</DependentUpon>
+    <Compile Include="Migrations\201706091805383_Probando.cs" />
+    <Compile Include="Migrations\201706091805383_Probando.Designer.cs">
+      <DependentUpon>201706091805383_Probando.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,8 +113,8 @@
     <Compile Include="EntitiesConfigurations\AdministradorEquipoConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705140609079_ADD.resx">
-      <DependentUpon>201705140609079_ADD.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706091805383_Probando.resx">
+      <DependentUpon>201706091805383_Probando.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

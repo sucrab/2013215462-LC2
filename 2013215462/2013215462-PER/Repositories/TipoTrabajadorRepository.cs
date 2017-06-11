@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class TipoTrabajadorRepository : Repository<TipoTrabajador>, ITipoTrabajadorRepository
+    public class TipoTrabajadorRepository : Repository<TipoTrabajador>, ITipoTrabajadorRepository
     {
-        private DiazDbContext _Context;
+       
 
         public TipoTrabajadorRepository(DiazDbContext _Context)
+            : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+          
         }
 
         private TipoTrabajadorRepository()

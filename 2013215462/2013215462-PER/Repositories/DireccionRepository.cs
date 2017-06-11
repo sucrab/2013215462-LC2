@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class DireccionRepository : Repository<Direccion>, IDireccionRepository
+    public class DireccionRepository : Repository<Direccion>, IDireccionRepository
     {
-        private DiazDbContext _Context;
 
         public DireccionRepository(DiazDbContext _Context)
+            : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+      
         }
 
         private DireccionRepository()

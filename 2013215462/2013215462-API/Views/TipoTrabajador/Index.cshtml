@@ -1,0 +1,70 @@
+﻿@model IEnumerable<_2013215462_ENT.TipoTrabajador>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo TipoTrabajador", "Create")
+</p>
+<table id="tbl_TipoTrabajador" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>TipoTrabajador ID:</th>
+            <th>Trabajador ID:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_TipoTrabajador")
+            .DataTable({
+                ajax: {
+                    url: "/API/TipoTrabajador",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "TipoTrabajadorID" },
+                    { data: "Tabajador.TrabajadorID" },
+
+                    {
+                        data: "TipoTrabajadorID",
+                        render: function (data, type, TipoTrabajador) {
+                            return "<a href = '/TipoTrabajador/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "TipoTrabajadorID",
+                        render: function (data, type, TipoTrabajador) {
+                            return "<a href = '/TipoTrabajador/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "TipoTrabajadorID",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-TipoTrabajador-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

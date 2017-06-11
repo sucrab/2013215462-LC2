@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class LineaTelefonicaRepository : Repository<LineaTelefonica>, ILineaTelefonicaRepository
+    public class LineaTelefonicaRepository : Repository<LineaTelefonica>, ILineaTelefonicaRepository
     {
-        private DiazDbContext _Context;
+
 
         public LineaTelefonicaRepository(DiazDbContext _Context)
+            : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+          
         }
 
         private LineaTelefonicaRepository()

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<_2013215462_ENT.TipoEvaluacion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo TipoEvaluacion", "Create")
+</p>
+<table id="tbl_TipoEvaluacion" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>TipoEvaluacion ID:</th>
+            <th>Evaluacion ID:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_TipoEvaluacion")
+            .DataTable({
+                ajax: {
+                    url: "/API/TipoEvaluacion",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "TipoEvaluacionID" },
+                    { data: "Evaluacion.EvaluacionID" },
+
+                    {
+                        data: "TipoEvaluacionID",
+                        render: function (data, type, TipoEvaluacion) {
+                            return "<a href = '/TipoEvaluacion/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "TipoEvaluacion",
+                        render: function (data, type, TipoEvaluacion) {
+                            return "<a href = '/TipoEvaluacion/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "TipoEvaluacion",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-TipoEvaluacion-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

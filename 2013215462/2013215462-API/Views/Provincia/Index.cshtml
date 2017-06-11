@@ -1,0 +1,75 @@
+﻿@model IEnumerable<_2013215462_ENT.Provincia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Provincia", "Create")
+</p>
+<table id="tbl_Provincia" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Provincia ID:</th>
+            <th>CadenaUbigeo:</th>
+            <th>Departamentos ID:</th>
+            <th>Distritos ID:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_Provincia")
+            .DataTable({
+                ajax: {
+                    url: "/API/Provincia",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "ProvinciaID" },
+                    { data: "CadenaUbigeo" },
+                    { data: "Departamento.DepartamentoID" },
+                    { data: "Distrito.DistritoID" },
+
+
+                    {
+                        data: "ProvinciaID",
+                        render: function (data, type, Provincia) {
+                            return "<a href = '/Provincia/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "ProvinciaID",
+                        render: function (data, type, Provincia) {
+                            return "<a href = '/Provincia/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "ProvinciaID",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-Provincia-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

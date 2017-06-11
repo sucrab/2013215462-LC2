@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class EstadoEvaluacionRepository : Repository<EstadoEvaluacion>, IEstadoEvaluacionRepository  
+    public class EstadoEvaluacionRepository : Repository<EstadoEvaluacion>, IEstadoEvaluacionRepository  
     {
-        private DiazDbContext _Context;
+
 
         public EstadoEvaluacionRepository(DiazDbContext _Context)
+            : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+        
         }
 
         private EstadoEvaluacionRepository()

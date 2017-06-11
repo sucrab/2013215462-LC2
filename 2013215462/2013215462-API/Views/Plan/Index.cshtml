@@ -1,0 +1,73 @@
+﻿@model IEnumerable<_2013215462_ENT.Plan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Plan", "Create")
+</p>
+<table id="tbl_Plan" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Plan ID:</th>
+            <th>TipoPlan ID:</th>
+            <th>Evaluacion ID:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_Plan")
+            .DataTable({
+                ajax: {
+                    url: "/API/Plan",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "PlanID" },
+                    { data: "TipoPlan.TipoPlanID" },
+                    { data: "Evaluacion.EvaluacionID" },
+
+
+                    {
+                        data: "PlanID",
+                        render: function (data, type, Plan) {
+                            return "<a href = '/Plan/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "PlanID",
+                        render: function (data, type, Plan) {
+                            return "<a href = '/Plan/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "PlanID",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-Plan-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

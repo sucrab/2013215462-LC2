@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class TipoLineaRepository : Repository<TipoLinea>, ITipoLineaRepository
+    public class TipoLineaRepository : Repository<TipoLinea>, ITipoLineaRepository
     {
-        private DiazDbContext _Context;
+
 
         public TipoLineaRepository(DiazDbContext _Context)
+            : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+           
         }
 
         private TipoLineaRepository()

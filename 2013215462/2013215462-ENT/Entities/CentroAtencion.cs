@@ -11,6 +11,9 @@ namespace _2013215462_ENT
     {
         public int CentroAtencionID { get; set; }
 
+        //public string NombreCentro { get; set; }
+      
+
         public Direccion Direccion { get; set; }
         public int DireccionID { get; set; }
 

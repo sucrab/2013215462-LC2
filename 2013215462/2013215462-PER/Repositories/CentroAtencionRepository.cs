@@ -8,14 +8,12 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class CentroAtencionRepository : Repository<CentroAtencion>, ICentroAtencionRepository
+    public class CentroAtencionRepository : Repository<CentroAtencion>, ICentroAtencionRepository
     {
-        private DiazDbContext _Context;
-
-        public CentroAtencionRepository(DiazDbContext _Context)
+        
+        public CentroAtencionRepository(DiazDbContext _Context) : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+         
         }
         private CentroAtencionRepository()
         {

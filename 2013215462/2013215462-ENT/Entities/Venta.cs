@@ -11,6 +11,8 @@ namespace _2013215462_ENT
     {
         public int VentaID { get; set; }
 
+        //public string Descripcion { get; set; }
+
         public Cliente Cliente { get; set; }
 
         public TipoPago TipoPago { get; set; }

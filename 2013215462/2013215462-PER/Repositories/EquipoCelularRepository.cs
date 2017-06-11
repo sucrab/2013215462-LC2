@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class EquipoCelularRepository : Repository<EquipoCelular>, IEquipoCelularRepository
+    public class EquipoCelularRepository : Repository<EquipoCelular>, IEquipoCelularRepository
     {
-        private DiazDbContext _Context;
+
 
         public EquipoCelularRepository(DiazDbContext _Context)
+            : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+          
         }
 
         private EquipoCelularRepository()

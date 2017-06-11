@@ -11,6 +11,7 @@ namespace _2013215462_ENT
     {
         public int DistritoID { get; set; }
 
+        //public string Nombre { get; set; }
         public Provincia Provincia { get; set; }
         public int ProvinciaID { get; set; }
 

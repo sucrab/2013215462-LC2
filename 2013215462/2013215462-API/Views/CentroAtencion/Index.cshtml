@@ -1,0 +1,76 @@
+﻿@model IEnumerable<_2013215462_ENT.CentroAtencion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo CentroAtencion", "Create")
+</p>
+<table id="tbl_CentroAtencion" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>CentroAtencion ID:</th>
+            <th>Direccion ID:</th>
+            <th>Evaluacion ID:</th>
+            <th>Venta ID:</th>
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_CentroAtencion")
+            .DataTable({
+                ajax: {
+                    url: "/API/CentroAtencion",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "CentroAtencionID" },
+                    { data: "Direccion.DireccionID" },
+                    { data: "Evaluacion.EvaluacionID" },
+                    { data: "Venta.VentaID" },
+
+
+                    {
+                        data: "CentroAtencionID",
+                        render: function (data, type, CentroAtencion) {
+                            return "<a href = '/CentroAtencion/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "CentroAtencionID",
+                        render: function (data, type, CentroAtencion) {
+                            return "<a href = '/CentroAtencion/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "CentroAtencionID",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-CentroAtencion-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

@@ -11,6 +11,9 @@ namespace _2013215462_ENT
     {
         public int ContratoID { get; set; }
 
+        //public string Descripcion { get; set; }
+       
+
         public Venta Venta { get; set; }
         public int VentaID  { get; set; }
 

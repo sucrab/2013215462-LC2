@@ -36,6 +36,8 @@ namespace _2013215462_PER
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer<DiazDbContext>(null);
+
             modelBuilder.Configurations.Add(new AdministradorEquipoConfiguration());
             modelBuilder.Configurations.Add(new AdministradorLineaConfiguration());
             modelBuilder.Configurations.Add(new CentroAtencionConfiguration());

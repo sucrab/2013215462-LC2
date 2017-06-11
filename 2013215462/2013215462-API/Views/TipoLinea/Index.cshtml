@@ -1,0 +1,70 @@
+﻿@model IEnumerable<_2013215462_ENT.TipoLinea>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo TipoLinea", "Create")
+</p>
+<table id="tbl_TipoLinea" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>TipoLinea ID:</th>
+            <th>LineaTelefonica ID:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_TipoLinea")
+            .DataTable({
+                ajax: {
+                    url: "/API/TipoLineaID",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "TipoLineaID" },
+                    { data: "LineaTelefonica.LineaTelefonicaID" },
+
+                    {
+                        data: "TipoLineaID",
+                        render: function (data, type, TipoLinea) {
+                            return "<a href = '/TipoLinea/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "TipoLineaID",
+                        render: function (data, type, TipoLinea) {
+                            return "<a href = '/TipoLinea/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "TipoLineaID",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-TipoLinea-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

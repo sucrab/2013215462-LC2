@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class AdministradorLineaRepository : Repository<AdministradorLinea>, IAdministradorLineaRepository
+    public class AdministradorLineaRepository : Repository<AdministradorLinea>, IAdministradorLineaRepository
     {
-        private DiazDbContext _Context;
+       
 
-        public AdministradorLineaRepository(DiazDbContext _Context)
+        public AdministradorLineaRepository(DiazDbContext _Context) : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+          
         }
 
         private AdministradorLineaRepository()

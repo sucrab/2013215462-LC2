@@ -1,0 +1,78 @@
+﻿@model IEnumerable<_2013215462_ENT.Distrito>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Distrito", "Create")
+</p>
+<table id="tbl_Distrito" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Distrito ID:</th>
+            <th>CadenaUbigeo:</th>
+            <th>Provincia ID:</th>
+            <th>Direccion ID:</th>
+
+
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_Distrito")
+            .DataTable({
+                ajax: {
+                    url: "/API/Distrito",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "DistritoID" },
+                    { data: "CadenaUbigeo" },
+                    { data: "Provincia.ProvinciaID" },
+                    { data: "Direccion.DireccionID" },
+
+
+                    {
+                        data: "DistritoID",
+                        render: function (data, type, Distrito) {
+                            return "<a href = '/Distrito/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "DistritoID",
+                        render: function (data, type, Distrito) {
+                            return "<a href = '/Distrito/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "DistritoID",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-Distrito-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

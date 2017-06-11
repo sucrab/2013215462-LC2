@@ -10,6 +10,8 @@ namespace _2013215462_ENT
     {
         public int EvaluacionID { get; set; }
 
+        //public string Descripcion { get; set; }
+
         public EstadoEvaluacion EstadoEvaluacion { get; set; }
        
 

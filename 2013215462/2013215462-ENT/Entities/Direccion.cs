@@ -10,6 +10,7 @@ namespace _2013215462_ENT
     {
         public int DireccionID { get; set; }
 
+        //public string Direccion { get; set; }
 
         public string CadenaUbigeo { get; set; }
 

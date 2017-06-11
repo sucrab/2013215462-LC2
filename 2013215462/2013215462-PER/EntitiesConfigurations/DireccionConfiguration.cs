@@ -1,6 +1,7 @@
 ﻿using _2013215462_ENT;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -18,8 +19,18 @@ namespace _2013215462_PER.EntitiesConfigurations
             HasRequired(d => d.Distrito)
               .WithMany(d => d.Direccion)
               .HasForeignKey(d => d.DistritoID);
-            
 
+
+            Property(a => a.DireccionID)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            //Property(v => v.CadenaUbigeo)
+            //    .IsRequired()
+            //    .HasMaxLength(255);
+
+     
+
+           
         }
     }
 }

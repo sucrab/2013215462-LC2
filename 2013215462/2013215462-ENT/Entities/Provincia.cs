@@ -11,6 +11,8 @@ namespace _2013215462_ENT
     {
         public int ProvinciaID { get; set; }
 
+        //public string Nombre { get; set; }
+
         public string CadenaUbigeo { get; set; }
 
         public Departamento Departamento { get; set; }

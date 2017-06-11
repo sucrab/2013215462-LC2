@@ -10,10 +10,7 @@ namespace _2013215462_PER.Repositories
     public class UnityOfWork : IUnityOfWork
     {
 
-        private static UnityOfWork _Instance;
-        private static readonly object _Lock = new object();
-
-        private DiazDbContext _Context { get; set; }
+        private readonly DiazDbContext _Context;
 
         public IAdministradorEquipoRepository AdministradorEquipo { get; private set; }
 
@@ -77,9 +74,11 @@ namespace _2013215462_PER.Repositories
 
         public IVentaRepository Venta { get; private set; }
 
-        private UnityOfWork()
+      
+
+        public UnityOfWork(DiazDbContext context)
         {
-            _Context = new DiazDbContext();
+            _Context = context;
 
             AdministradorEquipo = new AdministradorEquipoRepository(_Context);
             AdministradorLinea = new AdministradorLineaRepository(_Context);
@@ -106,21 +105,10 @@ namespace _2013215462_PER.Repositories
             
         }
 
-
-        public static UnityOfWork Instance
+        public UnityOfWork()
         {
-            get
-            {
-                lock (_Lock)
-                {
-                    if (_Instance == null)
-                        _Instance = new UnityOfWork();
-                }
 
-                return _Instance;
-            }
         }
-       
         public int SaveChanges()
         {
             return _Context.SaveChanges();
@@ -131,6 +119,9 @@ namespace _2013215462_PER.Repositories
             _Context.Dispose();
         }
 
-       
+        public void StateModified(object Entity)
+        {
+            _Context.Entry(Entity).State = System.Data.Entity.EntityState.Modified;
+        }
     }
 }

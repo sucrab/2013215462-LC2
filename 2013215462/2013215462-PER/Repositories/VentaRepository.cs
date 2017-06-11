@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class VentaRepository : Repository<Venta>, IVentaRepository
+    public class VentaRepository : Repository<Venta>, IVentaRepository
     {
-        private DiazDbContext _Context;
+    
 
         public VentaRepository(DiazDbContext _Context)
+            : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+           
         }
 
         private VentaRepository()

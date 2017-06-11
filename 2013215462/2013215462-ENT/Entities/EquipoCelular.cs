@@ -10,6 +10,8 @@ namespace _2013215462_ENT
     {
         public int EquipoCelularID { get; set; }
 
+        //public string Modelo { get; set; }
+
         public AdministradorEquipo AdministradorEquipo { get; set; }
         public int AdministradorEquipoID { get; set; }
 

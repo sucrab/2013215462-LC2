@@ -11,6 +11,7 @@ namespace _2013215462_ENT
     {
         
         public int TipoPagoID { get; set; }
+        //public string Descripcion { get; set; }
 
         public ICollection<Venta> Venta { get; set; }
         public int VentaID { get; set; }

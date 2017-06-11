@@ -8,7 +8,7 @@ namespace _2013215462_ENT.lRepositories
 {
     public interface IAdministradorEquipoRepository : IRepository<AdministradorEquipo>
     {
-        IEnumerable<AdministradorEquipo> GetAdministradorEquipoWithEquipoCelular(int pageindex, int pageSize);
+      
 
     }
 }

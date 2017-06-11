@@ -11,6 +11,8 @@ namespace _2013215462_ENT
     {
         public int TipoPlanID { get; set; }
 
+        //public string Descripcion { get; set; }
+
         public ICollection<Plan> Plan { get; set; }
 
 

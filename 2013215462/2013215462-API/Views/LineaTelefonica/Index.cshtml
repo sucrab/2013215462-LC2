@@ -1,0 +1,77 @@
+﻿@model IEnumerable<_2013215462_ENT.LineaTelefonica>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo LineaTelefonica", "Create")
+</p>
+<table id="tbl_LineaTelefonica" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>LineaTelefonica ID:</th>
+            <th>TipoLinea ID:</th>
+            <th>AdministradorLinea ID:</th>
+            <th>Venta ID:</th>
+            <th>Evaluacion ID:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_LineaTelefonica")
+            .DataTable({
+                ajax: {
+                    url: "/API/LineaTelefonica",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "LineaTelefonicaID" },
+                    { data: "TipoLinea.TipoLineaID" },
+                    { data: "AdministradorLinea.AdministradorLineaID" },
+                    { data: "Venta.VentaID" },
+                    { data: "Evaluacion.EvaluacionID" },
+
+
+                    {
+                        data: "LineaTelefonicaID",
+                        render: function (data, type, LineaTelefonica) {
+                            return "<a href = '/LineaTelefonica/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "LineaTelefonica",
+                        render: function (data, type, LineaTelefonica) {
+                            return "<a href = '/LineaTelefonica/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "LineaTelefonica",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-LineaTelefonica-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

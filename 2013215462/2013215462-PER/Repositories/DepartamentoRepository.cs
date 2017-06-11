@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace _2013215462_PER.Repositories
 {
-    class DepartamentoRepository : Repository<Departamento>, IDepartamentoRepository
+    public class DepartamentoRepository : Repository<Departamento>, IDepartamentoRepository
     {
-        private DiazDbContext _Context;
 
         public DepartamentoRepository(DiazDbContext _Context)
+            : base(_Context)
         {
-            // TODO: Complete member initialization
-            this._Context = _Context;
+            
         }
         private DepartamentoRepository()
         {

@@ -32,5 +32,7 @@ namespace _2013215462_ENT.lRepositories
 
         int SaveChanges();
 
+        void StateModified(object entity);
+
     }
 }

@@ -11,6 +11,8 @@ namespace _2013215462_ENT
     {
         public int DepartamentoID { get; set; }
 
+        //public string Nombre { get; set; }
+
         public ICollection<Provincia> Provincia { get; set; }
         public int ProvinciaID { get; set; }
 

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<_2013215462_ENT.AdministradorLinea>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo AdministradorLinea", "Create")
+</p>
+<table id="tbl_AdministradorLinea" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>AdministradorLinea ID:</th>
+            <th>LineaTelefonica ID:</th>
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_AdministradorLinea")
+            .DataTable({
+                ajax: {
+                    url: "/API/AdministradorLinea",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "AdministradorLineaID" },
+                    { data: "LineaTelefonica.LineaTelefonicaID" },
+
+                    {
+                        data: "AdministradorLineaID",
+                        render: function (data, type, AdministradorLinea) {
+                            return "<a href = '/AdministradorLinea/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "AdministradorLineaID",
+                        render: function (data, type, AdministradorLinea) {
+                            return "<a href = '/AdministradorLinea/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "AdministradorLineaID",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-AdministradorLinea-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

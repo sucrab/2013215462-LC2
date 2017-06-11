@@ -1,0 +1,73 @@
+﻿@model IEnumerable<_2013215462_ENT.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Cliente", "Create")
+</p>
+<table id="tbl_Cliente" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Cliente ID:</th>
+            <th>Evaluacion ID:</th>
+            <th>Venta ID:</th>
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_Cliente")
+            .DataTable({
+                ajax: {
+                    url: "/API/Cliente",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "ClienteID" },
+                    { data: "Evaluacion.EvaluacionID" },
+                    { data: "Venta.VentaID" },
+
+                    {
+                        data: "ClienteID",
+                        render: function (data, type, Cliente) {
+                            return "<a href = '/Cliente/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "ClienteID",
+                        render: function (data, type, Cliente) {
+                            return "<a href = '/Cliente/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "ClienteID",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-Cliente-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

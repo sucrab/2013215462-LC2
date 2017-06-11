@@ -1,0 +1,85 @@
+﻿@model IEnumerable<_2013215462_ENT.Venta>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Venta", "Create")
+</p>
+<table id="tbl_Venta" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Venta ID:</th>
+            <th>Cliente ID:</th>
+            <th>TipoPago ID:</th>
+            <th>Contrato ID:</th>
+            <th>Evaluacion ID:</th>
+            <th>LineaTelefonica ID:</th>
+            <th>CentroAtencion ID:</th>
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_Venta")
+            .DataTable({
+                ajax: {
+                    url: "/API/Venta",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "VentaID" },
+                    { data: "Cliente.ClienteID" },
+                    { data: "TipoPago.TipoPagoID" },
+                    { data: "Contrato.ContratoID" },
+                    { data: "Evaluacion.EvaluacionID" },
+                    { data: "LineaTelefonica.LineaTelefonicaID" },
+                    { data: "CentroAtencion.CentroAtencionID" },
+
+
+
+
+
+                    {
+                        data: "VentaID",
+                        render: function (data, type, Venta) {
+                            return "<a href = '/Venta/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "VentaID",
+                        render: function (data, type, Venta) {
+                            return "<a href = '/Venta/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "VentaID",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-Venta-ID=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}
